@@ -5,15 +5,17 @@ import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
 import bcrypt from "bcryptjs";
 import { supabase } from "../libs/supabase";
+import { useRouter } from "expo-router";
 
 export default function AuthScreen() {
+  const router = useRouter();
+
   const [mode, setMode] = React.useState<"login" | "signup">("login");
   const [step, setStep] = React.useState<1 | 2 | 3>(1);
   const [phone, setPhone] = React.useState("");
   const [otp, setOtp] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  // LOGIN
   const handleLogin = async () => {
     if (!phone || !password)
       return Alert.alert("Error", "Enter phone & password");
@@ -29,10 +31,9 @@ export default function AuthScreen() {
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) return Alert.alert("Error", "Wrong password");
 
-    Alert.alert("Success", "Logged in successfully!");
+    router.replace("/(app)");
   };
 
-  // SIGNUP FLOW
   const handleSignupStep1 = async () => {
     if (!phone) return Alert.alert("Error", "Enter phone");
 
@@ -46,6 +47,7 @@ export default function AuthScreen() {
       return Alert.alert("Error", "Phone already registered. Please login.");
     }
 
+    setStep(2);
   };
 
   const handleSignupStep2 = () => {
@@ -67,28 +69,23 @@ export default function AuthScreen() {
 
     if (error) return Alert.alert("Error", error.message);
 
-    Alert.alert("Success", "Account created! You can now login.");
-    setMode("login");
-    setStep(1);
-    setPhone("");
-    setOtp("");
-    setPassword("");
+    Alert.alert("Success", "Account created!");
+
+    
+    router.replace("/(app)");
   };
 
   return (
-      <View style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.langSelector}>
         <MaterialIcons name="language" size={20} color="#000" />
         <Text style={styles.langText}>English</Text>
       </View>
 
-      <Text style={styles.welcome}>Welcome to CitiConnect!</Text>
+      <Text style={styles.welcome}>Welcome to JanSetu!</Text>
       <Text style={styles.subtitle}>Let's get started</Text>
 
-      <LinearGradient
-        colors={["#8ABCAA", "#BCE76D"]}
-        style={styles.card}
-      >
+      <LinearGradient colors={["#8ABCAA", "#BCE76D"]} style={styles.card}>
         {mode === "login" && (
           <View style={styles.card}>
             <TextInput
@@ -137,6 +134,9 @@ export default function AuthScreen() {
               style={styles.button}
             >
               SEND OTP
+            </Button>
+            <Button onPress={() => setMode("login")}>
+              Already have an account? Login
             </Button>
           </View>
         )}
