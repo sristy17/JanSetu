@@ -22,11 +22,11 @@ const Tab = createBottomTabNavigator();
 const categories = ["All", "Roads", "Footpaths", "Buildings", "Transport", "River/Lakes"];
 
 const feedData = [
-  { id: "1", username: "JohnDoe", profilePic: "https://randomuser.me/api/portraits/men/1.jpg", time: "2h ago", caption: "The main road looks congested today.", image: "https://images.unsplash.com/photo-1505842465776-3e45e7a35d1c", category: "Roads", status: "Pending" },
-  { id: "2", username: "JaneSmith", profilePic: "https://randomuser.me/api/portraits/women/2.jpg", time: "5h ago", caption: "Newly paved footpaths in the park.", image: "https://images.unsplash.com/photo-1606788075761-43c83ff82a05", category: "Footpaths", status: "In Progress" },
-  { id: "3", username: "Mike89", profilePic: "https://randomuser.me/api/portraits/men/3.jpg", time: "1d ago", caption: "Skyscrapers dominate the skyline.", image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29", category: "Buildings", status: "Completed" },
-  { id: "4", username: "SaraLee", profilePic: "https://randomuser.me/api/portraits/women/4.jpg", time: "3d ago", caption: "Busy city transport hub today.", image: "https://images.unsplash.com/photo-1523983301421-eda7c9f6b7df", category: "Transport", status: "Pending" },
-  { id: "5", username: "TomHanks", profilePic: "https://randomuser.me/api/portraits/men/5.jpg", time: "5d ago", caption: "The river looks clean after recent rains.", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", category: "River/Lakes", status: "In Progress" },
+  { id: "1", username: "JohnDoe", profilePic: "https://randomuser.me/api/portraits/men/1.jpg", time: "2h ago", caption: "Pothole on main road spotted today.", image: "https://cdn.shopify.com/s/files/1/0274/7288/7913/files/MicrosoftTeams-image_32.jpg?v=1705315718", category: "Roads", status: "Pending" },
+  { id: "2", username: "JaneSmith", profilePic: "https://randomuser.me/api/portraits/women/2.jpg", time: "5h ago", caption: "he streetlights on the main road have been broken for months.", image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvrjYsqPDui7sjzwDyA9mO9z1RQC7ASLpid3e0qAm7UYd3pfTe", category: "Footpaths", status: "In Progress" },
+  { id: "3", username: "Mike89", profilePic: "https://randomuser.me/api/portraits/men/3.jpg", time: "1d ago", caption: "Streetlight broke and fell on footpath.", image: "https://www.bing.com/th/id/OIP.xASAYFR9G69ZM2ufmnmakQHaFj?w=190&h=180&c=8&rs=1&qlt=70&o=7&cb=thws5&dpr=1.3&pid=3.1&rm=3", category: "Footpath", status: "Completed" },
+  { id: "4", username: "SaraLee", profilePic: "https://randomuser.me/api/portraits/women/4.jpg", time: "3d ago", caption: "he streetlights on the main road have been broken for months.", image: "https://images.unsplash.com/photo-1523983301421-eda7c9f6b7df", category: "Roads", status: "Pending" },
+  { id: "5", username: "TomHanks", profilePic: "https://randomuser.me/api/portraits/men/5.jpg", time: "5d ago", caption: "Streetlight broke and fell on footpath.", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", category: "Roads", status: "In Progress" },
 ];
 
 const FeedItem = ({ post }: { post: typeof feedData[0] }) => (
@@ -93,8 +93,8 @@ const CameraButton = ({ onPress }: any) => {
     <TouchableOpacity style={styles.cameraButtonContainer} onPress={onPress} activeOpacity={0.8}>
       <LinearGradient
         colors={["#8ABCAA", "#3CB371"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
         style={styles.cameraButton}
       >
         <Camera color="#fff" size={28} />
@@ -109,9 +109,9 @@ const Home = () => {
       screenOptions={({ route }: any) => ({
         headerShown: false,
         tabBarActiveTintColor: "#fff",
-        tabBarInactiveTintColor: "#A7D7C5",
+        tabBarInactiveTintColor: "#888",
         tabBarStyle: { height: 70, paddingBottom: 5, backgroundColor: "transparent", borderTopWidth: 0 },
-        tabBarBackground: () => <LinearGradient colors={["#8ABCAA", "#BCE76D"]} start={[0,0]} end={[1,0]} style={{ flex: 1 }} />,
+        tabBarBackground: () => <LinearGradient colors={["#8ABCAA", "#BCE76D"]} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={{ flex: 1 }} />,
         tabBarIcon: ({ color, size }: any) => {
           if (route.name === "Home") return <FileText color={color} size={size} />;
           if (route.name === "Profile") return <User color={color} size={size} />;
