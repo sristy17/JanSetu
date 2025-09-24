@@ -19,8 +19,9 @@ const Login = () => {
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [password, setPassword] = useState("");
-
+ 
   async function handleLogin() {
+    /*
     if (!phone || !password) {
       return Alert.alert("Error", "Enter phone & password");
     }
@@ -30,6 +31,8 @@ const Login = () => {
       .select("*")
       .eq("phone", phone)
       .single();
+    
+
 
     if (error || !user) {
       return Alert.alert("Error", "Invalid username or password");
@@ -38,9 +41,9 @@ const Login = () => {
     if (user.password !== password) {
       return Alert.alert("Error", "Wrong password");
     }
-
+    
     await AsyncStorage.setItem("user", JSON.stringify(user));
-
+    */
     navigation.navigate("Home" as never);
   }
 
