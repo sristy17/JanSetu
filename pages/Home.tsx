@@ -23,9 +23,9 @@ const categories = ["All", "Roads", "Footpaths", "Buildings", "Transport", "Rive
 
 const feedData = [
   { id: "1", username: "JohnDoe", profilePic: "https://randomuser.me/api/portraits/men/1.jpg", time: "2h ago", caption: "Pothole on main road spotted today.", image: "https://cdn.shopify.com/s/files/1/0274/7288/7913/files/MicrosoftTeams-image_32.jpg?v=1705315718", category: "Roads", status: "Pending" },
-  { id: "2", username: "JaneSmith", profilePic: "https://randomuser.me/api/portraits/women/2.jpg", time: "5h ago", caption: "he streetlights on the main road have been broken for months.", image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvrjYsqPDui7sjzwDyA9mO9z1RQC7ASLpid3e0qAm7UYd3pfTe", category: "Footpaths", status: "In Progress" },
+  { id: "2", username: "JaneSmith", profilePic: "https://randomuser.me/api/portraits/women/2.jpg", time: "5h ago", caption: "The streetlights on the main road have been broken for months.", image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvrjYsqPDui7sjzwDyA9mO9z1RQC7ASLpid3e0qAm7UYd3pfTe", category: "Footpaths", status: "In Progress" },
   { id: "3", username: "Mike89", profilePic: "https://randomuser.me/api/portraits/men/3.jpg", time: "1d ago", caption: "Streetlight broke and fell on footpath.", image: "https://www.bing.com/th/id/OIP.xASAYFR9G69ZM2ufmnmakQHaFj?w=190&h=180&c=8&rs=1&qlt=70&o=7&cb=thws5&dpr=1.3&pid=3.1&rm=3", category: "Footpath", status: "Completed" },
-  { id: "4", username: "SaraLee", profilePic: "https://randomuser.me/api/portraits/women/4.jpg", time: "3d ago", caption: "he streetlights on the main road have been broken for months.", image: "https://images.unsplash.com/photo-1523983301421-eda7c9f6b7df", category: "Roads", status: "Pending" },
+  { id: "4", username: "SaraLee", profilePic: "https://randomuser.me/api/portraits/women/4.jpg", time: "3d ago", caption: "The streetlights on the main road have been broken for months.", image: "https://images.unsplash.com/photo-1523983301421-eda7c9f6b7df", category: "Roads", status: "Pending" },
   { id: "5", username: "TomHanks", profilePic: "https://randomuser.me/api/portraits/men/5.jpg", time: "5d ago", caption: "Streetlight broke and fell on footpath.", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", category: "Roads", status: "In Progress" },
 ];
 
